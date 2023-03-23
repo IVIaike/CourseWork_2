@@ -1,21 +1,14 @@
 package Tasks;
 
 public enum TaskType {
-    WORK(1,"work"), PERSONAL(2, "personal");
+    WORK(0,"рабочая"), PERSONAL(1, "личная");
 
-    private int index;
-    private String name;
+    public final int value;
+    public final String name;
 
-    TaskType(int index, String name) {
-        this.index = index;
+
+    TaskType(int value, String name) {
+        this.value = value;
         this.name = name;
-    }
-
-    public int getI() {
-        return index;
-    }
-
-    public String getName() {
-        return name;
     }
 }

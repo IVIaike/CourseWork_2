@@ -2,8 +2,8 @@ package Tasks;
 
 import java.time.LocalDateTime;
 
-public class MonthlyClass extends Task implements Available {
-    public MonthlyClass(String title, String description, TaskType taskType, LocalDateTime taskDateTime) throws WrongInputExceptions {
+public class MonthlyTask extends Task implements Available {
+    public MonthlyTask(String title, String description, TaskType taskType, LocalDateTime taskDateTime) throws WrongInputExceptions {
         super(title, description, taskType, taskDateTime);
     }
 

@@ -3,15 +3,15 @@ package Tasks;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Task {
+public abstract class Task implements Available {
     private String title;
     private String description;
     private TaskType taskType;
     private LocalDateTime deadLine;
     private boolean isFinished;
 
-    private final long id = count;
-    private static long count = 1L;
+    private final int id = count;
+    private static int count = 1;
 
     public Task(String title, String description, TaskType taskType, LocalDateTime localDateTime) throws WrongInputExceptions {
         this.title = ValidationUtils.validateString(title);
@@ -62,7 +62,7 @@ public class Task {
         isFinished = finished;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
@@ -82,13 +82,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", taskType=" + taskType +
-                ", deadLine=" + deadLine +
-                ", isFinished=" + isFinished +
-                ", id=" + id +
-                '}';
+        return "Задача. Имя: " + title + ", описание: " + description + ", тип задачи: " + taskType + ", срок выполнения: " + deadLine + ", статус: " + isFinished + ", id: " + id;
     }
 }

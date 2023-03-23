@@ -1,4 +1,7 @@
+import java.time.LocalDate;
+import java.time.LocalDate;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -16,21 +19,22 @@ public class Main {
                         TaskService.printActiveTasks();
                         break;
                     case 2:
-                        TaskService.getTaskByCurrentDate();
-                        break;
-                    case 3:
                         TaskService.addTask(scanner);
                         break;
+                    case 3:
+                        TaskService.deleteTask(scanner);
+                        break;
                     case 4:
-                        TaskService.editTask();
+                        TaskService.getTaskByCurrentDate(scanner);
                         break;
                     case 5:
-                        TaskService.deleteTask();
+                        TaskService.editTask();
                         break;
                     case 6:
-                        TaskService.printFinishedTasks();
+                        TaskService.getNextDateTimeExecution();
                         break;
                     case 0:
+                        TaskService.printFinishedTasks();
                         break;
                 }
             } else {
@@ -43,10 +47,11 @@ public class Main {
 
     private static void printMenu(){
         System.out.println("1 - вывести список активных задач");
-        System.out.println("2 - вывести список активных задач на день");
-        System.out.println("3 - создать задачу");
-        System.out.println("4 - редактировать задачу");
-        System.out.println("5 - удалить задачу");
-        System.out.println("6 - вывести список завершенных задач");
+        System.out.println("2 - добавить новую задачу");
+        System.out.println("3 - удалить задачу");
+        System.out.println("4 - вывести список активных задач на день");
+//        System.out.println("5 - редактировать задачу");
+//        System.out.println("6 - вывести задачи по датам исполнения");
+        System.out.println("0 - вывести список завершенных задач");
     }
 }
